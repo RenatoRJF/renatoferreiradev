@@ -1,8 +1,11 @@
 "use server";
 
-import { redirect } from "next/navigation";
+interface FormState {
+  success: boolean;
+  message: string;
+}
 
-export async function submitContactForm(prevState: any, formData: FormData) {
+export async function submitContactForm(prevState: FormState, formData: FormData): Promise<FormState> {
   const name = formData.get("name") as string;
   const email = formData.get("email") as string;
   const message = formData.get("message") as string;
@@ -44,7 +47,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
         message: "Failed to send message. Please try again or contact me directly.",
       };
     }
-  } catch (error) {
+  } catch {
     return {
       success: false,
       message: "Failed to send message. Please try again or contact me directly.",
