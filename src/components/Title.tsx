@@ -18,16 +18,28 @@ const gradients = [
   "from-orange-200 via-red-600 to-pink-800"
 ];
 
+// Simple hash function to generate deterministic gradient based on content
+function getGradientIndex(content: string): number {
+  let hash = 0;
+  for (let i = 0; i < content.length; i++) {
+    const char = content.charCodeAt(i);
+    hash = ((hash << 5) - hash) + char;
+    hash = hash & hash; // Convert to 32-bit integer
+  }
+  return Math.abs(hash) % gradients.length;
+}
+
 export default function Title({ className, children, gradient }: TitleProps) {
-  const randomGradient = gradient || gradients[Math.floor(Math.random() * gradients.length)];
+  const content = typeof children === 'string' ? children : '';
+  const selectedGradient = gradient || gradients[getGradientIndex(content)];
   
   return (
     <h1 
-      className={cx("text-[32px] sm:text-[40px] lg:text-[48px] font-extrabold font-sans mb-4 leading-[40px] sm:leading-[48px] lg:leading-[56px] text-transparent bg-clip-text bg-gradient-to-r", randomGradient, className)}
-      style={{
-        animation: "fadeIn 0.3s ease-in-out",
-        filter: "drop-shadow(0 0 8px rgba(6, 182, 212, 0.3))"
-      }}
+      className={cx(
+        "text-[32px] sm:text-[40px] lg:text-[48px] font-extrabold font-sans mb-4 leading-[40px] sm:leading-[48px] lg:leading-[56px] text-transparent bg-clip-text bg-gradient-to-r animate-fade-in drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]",
+        selectedGradient, 
+        className
+      )}
     >
       {children}
     </h1>

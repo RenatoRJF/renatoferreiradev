@@ -9,6 +9,7 @@ const routes = [
   { name: "Career", pathname: "/career" },
   { name: "Other projects", pathname: "/projects" },
   { name: "Open Source", pathname: "/opensource" },
+  { name: "Contact", pathname: "/contact" },
 ] as const;
 
 export default function Header() {

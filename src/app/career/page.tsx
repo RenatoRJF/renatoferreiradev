@@ -19,11 +19,7 @@ export default function Career() {
                 <a
                   target="_blank"
                   href={job.companyUrl}
-                  className="flex items-center gap-2 text-sm text-white hover:text-yellow-400 transition-colors duration-200 group"
-                  style={{
-                    textDecoration: "underline",
-                    textUnderlineOffset: "4px",
-                  }}
+                  className="flex items-center gap-2 text-sm text-white hover:text-yellow-400 transition-colors duration-200 group underline underline-offset-1"
                 >
                   <Link className="w-3 h-3 group-hover:animate-pulse transition-all duration-200" />
                   {job.company}

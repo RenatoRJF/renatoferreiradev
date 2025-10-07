@@ -1,7 +1,34 @@
-import { FileText, Briefcase, FolderOpen, Github, Home } from "lucide-react";
+import { FileText, Briefcase, FolderOpen, Github, Home, Mail, Linkedin } from "lucide-react";
 
 // Define the actions
 export const getActions = (router: { push: (path: string) => void }) => [
+  {
+    id: "contact",
+    name: "Contact",
+    shortcut: ["g", "t"],
+    keywords: "gt contact email message",
+    perform: () => router.push("/contact"),
+    icon: <Mail className="w-4 h-4" />,
+    section: "GENERAL",
+  },
+  {
+    id: "linkedin",
+    name: "LinkedIn",
+    shortcut: ["g", "l"],
+    keywords: "gl linkedin professional network",
+    perform: () => window.open("https://www.linkedin.com/in/renatoferreiradev/", "_blank"),
+    icon: <Linkedin className="w-4 h-4" />,
+    section: "GENERAL",
+  },
+  {
+    id: "github",
+    name: "GitHub",
+    shortcut: ["g", "g"],
+    keywords: "gg github code repository",
+    perform: () => window.open("https://github.com/RenatoRJF", "_blank"),
+    icon: <Github className="w-4 h-4" />,
+    section: "GENERAL",
+  },
   {
     id: "home",
     name: "Home",
