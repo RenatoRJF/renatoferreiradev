@@ -1,5 +1,8 @@
+"use client";
+
 import cx from "classnames";
 import { ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 interface TitleProps {
   className?: string;
@@ -9,20 +12,20 @@ interface TitleProps {
 
 const gradients = [
   "from-cyan-200 via-blue-600 to-purple-800",
-  "from-pink-200 via-red-600 to-orange-800", 
   "from-green-200 via-emerald-600 to-teal-800",
-  "from-yellow-200 via-orange-600 to-red-800",
-  "from-purple-200 via-pink-600 to-rose-800",
+  "from-purple-200 via-indigo-600 to-blue-800",
   "from-indigo-200 via-purple-600 to-pink-800",
   "from-teal-200 via-cyan-600 to-blue-800",
-  "from-orange-200 via-red-600 to-pink-800"
+  "from-emerald-200 via-green-600 to-teal-800",
+  "from-blue-200 via-cyan-600 to-purple-800",
+  "from-violet-200 via-purple-600 to-indigo-800"
 ];
 
-// Simple hash function to generate deterministic gradient based on content
-function getGradientIndex(content: string): number {
+// Hash function to generate deterministic gradient based on route
+function getGradientIndex(pathname: string): number {
   let hash = 0;
-  for (let i = 0; i < content.length; i++) {
-    const char = content.charCodeAt(i);
+  for (let i = 0; i < pathname.length; i++) {
+    const char = pathname.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
     hash = hash & hash; // Convert to 32-bit integer
   }
@@ -30,8 +33,8 @@ function getGradientIndex(content: string): number {
 }
 
 export default function Title({ className, children, gradient }: TitleProps) {
-  const content = typeof children === 'string' ? children : '';
-  const selectedGradient = gradient || gradients[getGradientIndex(content)];
+  const pathname = usePathname();
+  const selectedGradient = gradient || gradients[getGradientIndex(pathname)];
   
   return (
     <h1 
