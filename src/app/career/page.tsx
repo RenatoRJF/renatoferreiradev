@@ -18,23 +18,27 @@ export default function Career() {
       <ul className="mt-8 space-y-8">
         {careerHistory.map((job, index) => (
           <li key={index} className="space-y-2">
-            <h4 className="text-lg font-bold text-white">{job.title}</h4>
+            <h4 className="text-base sm:text-lg font-bold text-white">{job.title}</h4>
 
-            <div className="flex items-center gap-2">
-              {job.companyUrl ? (
-                <a
-                  target="_blank"
-                  href={job.companyUrl}
-                  className="flex items-center gap-2 text-sm text-white hover:text-yellow-400 transition-colors duration-200 group underline underline-offset-1"
-                >
-                  <Link className="w-3 h-3 group-hover:animate-pulse transition-all duration-200" />
-                  {job.company}
-                </a>
-              ) : (
-                <span className="text-sm text-white">{job.company}</span>
-              )}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <div className="flex items-center gap-2">
+                {job.companyUrl ? (
+                  <a
+                    target="_blank"
+                    href={job.companyUrl}
+                    className="flex items-center gap-2 text-sm text-white hover:text-yellow-400 transition-colors duration-200 group underline underline-offset-1"
+                  >
+                    <Link className="w-3 h-3 group-hover:animate-pulse transition-all duration-200" />
+                    {job.company}
+                  </a>
+                ) : (
+                  <span className="text-sm text-white">{job.company}</span>
+                )}
+              </div>
               {job.location && (
-                <span className="text-sm text-gray-400">• {job.location}</span>
+                <span className="text-sm text-gray-400 sm:before:content-['•'] sm:before:mr-2">
+                  {job.location}
+                </span>
               )}
             </div>
 
