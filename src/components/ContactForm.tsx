@@ -32,10 +32,10 @@ export default function ContactForm() {
 
   return (
     <div className="mt-8">
-      <h2 className="text-2xl font-bold text-white mb-8">Send me an email</h2>
+      <h2 className="text-xl sm:text-2xl font-bold text-white mb-8">Send me an email</h2>
 
       <div className="flex justify-start">
-        <form action={formAction} className="space-y-6 w-1/2">
+        <form action={formAction} className="space-y-6 w-full md:w-3/4 lg:w-1/2">
           <div>
             <label
               htmlFor="name"
