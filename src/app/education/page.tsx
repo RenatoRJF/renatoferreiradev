@@ -1,11 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
 import { GraduationCap, BookOpen } from "lucide-react";
 import Title from "@/components/Title";
-
-export const metadata: Metadata = {
-  title: "Education",
-  description: "Renato Ferreira's educational background - University degree, Master's, and professional certifications.",
-};
 
 export default function Education() {
   return (
