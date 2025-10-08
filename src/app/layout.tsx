@@ -3,7 +3,8 @@ import { Inter } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import CommandPalette from "@/components/CommandPalette/CommandPalette";
+import CommandPalette from "@/components/CommandPalette";
+import QueryProvider from "@/providers/QueryProvider";
 import { Toaster } from "react-hot-toast";
 
 import "./globals.css";
@@ -26,27 +27,29 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} antialiased`}>
-        <div className="min-h-screen bg-black grid grid-rows-[80px_1fr_auto]">
-          <Header />
+        <QueryProvider>
+          <div className="min-h-screen bg-black grid grid-rows-[80px_1fr_auto]">
+            <Header />
 
-          <div className="p-8 max-w-[800px] w-full mx-auto h-full">
-            {children}
+            <div className="p-8 max-w-[800px] w-full mx-auto h-full">
+              {children}
+            </div>
+
+            <Footer />
+
+            <CommandPalette />
           </div>
-
-          <Footer />
-          
-          <CommandPalette />
-        </div>
-        <Toaster 
-          position="bottom-center"
-          toastOptions={{
-            style: {
-              background: '#1f2937',
-              color: '#fff',
-              border: '1px solid #374151',
-            },
-          }}
-        />
+          <Toaster
+            position="bottom-center"
+            toastOptions={{
+              style: {
+                background: "#1f2937",
+                color: "#fff",
+                border: "1px solid #374151",
+              },
+            }}
+          />
+        </QueryProvider>
       </body>
     </html>
   );
