@@ -29,7 +29,7 @@ export default function OpenSourceCard({ packageName }: OpenSourceCardProps) {
 
   return (
     <li className="space-y-4">
-      <h4 className="text-lg font-bold text-white">{data.name}</h4>
+      <h4 className="text-base sm:text-lg font-bold text-white">{data.name}</h4>
 
       {data.description && (
         <p className="text-sm text-gray-300 leading-relaxed">
@@ -37,7 +37,7 @@ export default function OpenSourceCard({ packageName }: OpenSourceCardProps) {
         </p>
       )}
 
-      <div className="flex items-center gap-4 flex-wrap">
+      <div className="flex items-center gap-3 sm:gap-4 flex-wrap">
         {data.githubUrl && (
           <a
             target="_blank"
@@ -61,7 +61,7 @@ export default function OpenSourceCard({ packageName }: OpenSourceCardProps) {
         </a>
       </div>
 
-      <div className="flex items-center gap-6 flex-wrap text-xs text-gray-400">
+      <div className="flex items-center gap-4 sm:gap-6 flex-wrap text-xs text-gray-400">
         {data.stats.stars > 0 && (
           <div className="flex items-center gap-1">
             <Star className="w-3 h-3" />
