@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Title from "@/components/Title";
 import OpenSourceCard from "@/components/OpenSourceCard";
 
 import { openSourceProjects } from "./opensource-projects";
+
+export const metadata: Metadata = {
+  title: "Open Source",
+  description: "Open source contributions by Renato Ferreira - Explore npm packages like web3-error-helper and other projects.",
+};
 
 export default function OpenSource() {
   return (

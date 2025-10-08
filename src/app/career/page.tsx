@@ -1,8 +1,14 @@
+import type { Metadata } from "next";
 import { Link } from "lucide-react";
 
 import Title from "@/components/Title";
 
 import { careerHistory } from "./career-history";
+
+export const metadata: Metadata = {
+  title: "Career",
+  description: "Explore Renato Ferreira's professional journey - From Full-stack Developer to React Tech Lead, with experience at Mercell, Success Factory, Fujitsu, and more.",
+};
 
 export default function Career() {
   return (
