@@ -1,4 +1,4 @@
-import { FileText, Briefcase, FolderOpen, Github, Home, Mail, Linkedin } from "lucide-react";
+import { FileText, Briefcase, Github, Home, Mail, Linkedin } from "lucide-react";
 
 // Define the actions
 export const getActions = (router: { push: (path: string) => void }) => [
@@ -63,15 +63,6 @@ export const getActions = (router: { push: (path: string) => void }) => [
     keywords: "ge education university master certifications",
     perform: () => router.push("/education"),
     icon: <FileText className="w-4 h-4" />,
-    section: "GO TO",
-  },
-  {
-    id: "projects",
-    name: "Projects",
-    shortcut: ["g", "p"],
-    keywords: "gp projects portfolio work",
-    perform: () => router.push("/projects"),
-    icon: <FolderOpen className="w-4 h-4" />,
     section: "GO TO",
   },
   {

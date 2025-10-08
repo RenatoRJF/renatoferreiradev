@@ -8,7 +8,6 @@ const routes = [
   { name: "About", pathname: "/about" },
   { name: "Career", pathname: "/career" },
   { name: "Education", pathname: "/education" },
-  { name: "Other projects", pathname: "/projects" },
   { name: "Open Source", pathname: "/opensource" },
   { name: "Contact", pathname: "/contact" },
 ] as const;
