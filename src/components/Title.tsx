@@ -39,7 +39,7 @@ export default function Title({ className, children, gradient }: TitleProps) {
   return (
     <h1 
       className={cx(
-        "text-[32px] sm:text-[40px] lg:text-[48px] font-extrabold font-sans mb-4 leading-[40px] sm:leading-[48px] lg:leading-[56px] text-transparent bg-clip-text bg-gradient-to-r animate-fade-in drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]",
+        "text-[24px] sm:text-[32px] lg:text-[48px] font-extrabold font-sans mb-4 leading-[32px] sm:leading-[40px] lg:leading-[56px] text-transparent bg-clip-text bg-gradient-to-r animate-fade-in drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]",
         selectedGradient, 
         className
       )}

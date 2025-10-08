@@ -15,10 +15,10 @@ export default function About() {
         Play it and enjoy it.
       </Title>
 
-      <div className="mt-8 flex gap-8">
-        <div className="w-80 h-80 bg-gray-800 rounded-md flex-shrink-0"></div>
+      <div className="mt-8 flex flex-col lg:flex-row gap-8">
+        <div className="w-full h-80 sm:h-[32rem] md:w-[70%] md:h-96 lg:w-96 lg:h-96 rounded-md flex-shrink-0 bg-[url('/me.jpg')] bg-cover bg-[center_30%] bg-no-repeat" />
 
-        <div className="space-y-6 text-gray-300 leading-relaxed">
+        <div className="space-y-6 text-gray-300 leading-relaxed flex-1">
           <p>
             Hey, I&apos;m <span className="text-white font-semibold">Renato Ferreira</span>.
           </p>
