@@ -57,6 +57,15 @@ export const getActions = (router: { push: (path: string) => void }) => [
     section: "GO TO",
   },
   {
+    id: "education",
+    name: "Education",
+    shortcut: ["g", "e"],
+    keywords: "ge education university master certifications",
+    perform: () => router.push("/education"),
+    icon: <FileText className="w-4 h-4" />,
+    section: "GO TO",
+  },
+  {
     id: "projects",
     name: "Projects",
     shortcut: ["g", "p"],
