@@ -3,6 +3,8 @@
 import Link from "next/link";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
+import { useKBar } from "kbar";
+import { Command } from "lucide-react";
 
 const routes = [
   { name: "About", pathname: "/about" },
@@ -14,6 +16,7 @@ const routes = [
 
 export default function Header() {
   const pathname = usePathname();
+  const { query } = useKBar();
   
   return (
     <header className="px-6 pb-6 pt-0 flex justify-between items-center min-w-screen">
@@ -49,6 +52,14 @@ export default function Header() {
           );
         })}
       </nav>
+
+      <button
+        onClick={query.toggle}
+        className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-md"
+        aria-label="Open command palette"
+      >
+        <Command className="w-5 h-5" />
+      </button>
     </header>
   );
 }
