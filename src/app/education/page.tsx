@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { GraduationCap, Award, BookOpen } from "lucide-react";
+import { GraduationCap, BookOpen } from "lucide-react";
 import Title from "@/components/Title";
 
 export const metadata: Metadata = {
@@ -52,14 +52,6 @@ export default function Education() {
             <p className="text-gray-300">Nuclio School, Spain</p>
             <p className="text-sm text-gray-400">October 2022 - June 2023</p>
           </div>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-bold text-white mb-4 flex items-center gap-2">
-            <Award className="w-6 h-6" />
-            Certifications
-          </h2>
-          <p className="text-gray-400 text-sm">Content to be added...</p>
         </section>
       </div>
     </>
