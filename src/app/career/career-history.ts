@@ -28,7 +28,7 @@ export const careerHistory = [
       period: "Mar 2023 – Dec 2023 • 9 mos",
     },
     {
-      title: "CTO & CoFounder",
+      title: "CTO & Full-Stack Engineer",
       company: "Qarwash.com",
       location: "Remote",
       companyUrl: "",
