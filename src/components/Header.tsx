@@ -18,6 +18,12 @@ export default function Header() {
   const pathname = usePathname();
   const { query } = useKBar();
   
+  const handleCommandClick = () => {
+    if (query) {
+      query.toggle();
+    }
+  };
+  
   return (
     <header className="px-6 pb-6 pt-0 flex justify-between items-center min-w-screen">
       <Link
@@ -54,8 +60,8 @@ export default function Header() {
       </nav>
 
       <button
-        onClick={query.toggle}
-        className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-md"
+        onClick={handleCommandClick}
+        className="text-gray-400 hover:text-white transition-colors duration-200 p-2 hover:bg-gray-800 rounded-md cursor-pointer"
         aria-label="Open command palette"
       >
         <Command className="w-5 h-5" />
